@@ -11,9 +11,9 @@ namespace CashFlow.Infrastructure.DataAccess
             _dbContext = dBContext;
         }
 
-        public void Commit()
+        public async Task Commit()
         {
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
