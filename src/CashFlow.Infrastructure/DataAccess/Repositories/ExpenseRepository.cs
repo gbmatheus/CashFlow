@@ -1,10 +1,10 @@
 ﻿using CashFlow.Domain.Entities;
-using CashFlow.Domain.Repositories;
+using CashFlow.Domain.Repositories.Expenses;
 using Microsoft.EntityFrameworkCore;
 
 namespace CashFlow.Infrastructure.DataAccess.Repositories
 {
-    internal class ExpenseRepository : IExpenseRepository
+    internal class ExpenseRepository : IExpenseReadOnlyRepository,IExpenseWriteOnlyRepository
     {
         private CashFlowDBContext _dbContext;
 

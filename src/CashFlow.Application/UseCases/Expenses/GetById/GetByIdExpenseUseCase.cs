@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CashFlow.Comunication.Responses;
-using CashFlow.Domain.Repositories;
+using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionBase;
 
@@ -8,10 +8,10 @@ namespace CashFlow.Application.UseCases.Expenses.GetById
 {
     public class GetByIdExpenseUseCase : IGetByIdExpenseUseCase
     {
-        private readonly IExpenseRepository _repository;
+        private readonly IExpenseReadOnlyRepository _repository;
         private readonly IMapper _mapper;
 
-        public GetByIdExpenseUseCase(IExpenseRepository repository, IMapper mapper)
+        public GetByIdExpenseUseCase(IExpenseReadOnlyRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
