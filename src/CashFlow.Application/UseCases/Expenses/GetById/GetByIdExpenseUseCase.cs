@@ -1,0 +1,30 @@
+﻿using AutoMapper;
+using CashFlow.Comunication.Responses;
+using CashFlow.Domain.Repositories;
+using CashFlow.Exception;
+using CashFlow.Exception.ExceptionBase;
+
+namespace CashFlow.Application.UseCases.Expenses.GetById
+{
+    public class GetByIdExpenseUseCase : IGetByIdExpenseUseCase
+    {
+        private readonly IExpenseRepository _repository;
+        private readonly IMapper _mapper;
+
+        public GetByIdExpenseUseCase(IExpenseRepository repository, IMapper mapper)
+        {
+            _repository = repository;
+            _mapper = mapper;
+        }
+
+        public async Task<ResponseExpenseJson> Execute(int id)
+        {
+            var result = await _repository.GetById(id);
+
+            if (result is null)
+                throw new NotFoundException(ResourceErrorMessages.EXPENSE_NOT_FOUNT);
+
+            return _mapper.Map<ResponseExpenseJson>(result);
+        }
+    }
+}
