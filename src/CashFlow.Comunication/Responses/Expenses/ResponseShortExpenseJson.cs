@@ -1,4 +1,4 @@
-﻿namespace CashFlow.Comunication.Responses
+﻿namespace CashFlow.Comunication.Responses.Expenses
 {
     public class ResponseShortExpenseJson
     {

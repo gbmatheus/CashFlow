@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CashFlow.Comunication.Requests;
+using CashFlow.Comunication.Requests.Expenses;
 using CashFlow.Domain.Repositories;
 using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Exception;

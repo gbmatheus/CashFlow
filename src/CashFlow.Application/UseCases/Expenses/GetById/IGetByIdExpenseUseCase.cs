@@ -1,4 +1,4 @@
-﻿using CashFlow.Comunication.Responses;
+﻿using CashFlow.Comunication.Responses.Expenses;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,6 @@
 ﻿using CashFlow.Comunication.Enums;
 
-namespace CashFlow.Comunication.Requests
+namespace CashFlow.Comunication.Requests.Expenses
 {
     public class RequestExpenseJson
     {

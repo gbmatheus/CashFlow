@@ -1,4 +1,4 @@
-﻿using CashFlow.Comunication.Responses;
+﻿using CashFlow.Comunication.Responses.Expenses;
 
 namespace CashFlow.Application.UseCases.Expenses.GetAll
 {

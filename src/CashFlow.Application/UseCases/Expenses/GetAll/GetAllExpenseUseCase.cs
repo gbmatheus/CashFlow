@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CashFlow.Comunication.Responses;
+using CashFlow.Comunication.Responses.Expenses;
 using CashFlow.Domain.Repositories.Expenses;
 
 namespace CashFlow.Application.UseCases.Expenses.GetAll
