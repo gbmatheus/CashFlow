@@ -26,6 +26,8 @@ jobs:
     # - uma versão especifica (@v4.2.0)
     # - uma branch (@develop)
     # - uses: actions/checkout@develop
+    - name: Build
+      run: ls
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
