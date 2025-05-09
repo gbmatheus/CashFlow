@@ -27,5 +27,10 @@ namespace CashFlow.Infrastructure.DataAccess.Repositories
         {
             await _dBContext.AddAsync(user);
         }
+
+        public async Task<User?> GetUserByEmail(string email)
+        {
+            return await _dBContext.Users.AsNoTracking().FirstOrDefaultAsync(user => user.Email.Equals(email));
+        }
     }
 }

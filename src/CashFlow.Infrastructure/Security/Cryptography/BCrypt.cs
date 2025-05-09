@@ -9,5 +9,10 @@ namespace CashFlow.Infrastructure.Security.Cryptography
         {
             return BC.BCrypt.HashPassword(password);
         }
+
+        public bool Verify(string password, string hash)
+        {
+            return BC.BCrypt.Verify(password, hash);
+        }
     }
 }

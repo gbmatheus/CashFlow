@@ -115,7 +115,16 @@ namespace CashFlow.Exception {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to O nome não pode estar vazio..
+        ///   Looks up a localized string similar to Invalid email and/or password.
+        /// </summary>
+        public static string LOGIN_INVALID {
+            get {
+                return ResourceManager.GetString("LOGIN_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The name cannot be empty..
         /// </summary>
         public static string NAME_EMPTY {
             get {
