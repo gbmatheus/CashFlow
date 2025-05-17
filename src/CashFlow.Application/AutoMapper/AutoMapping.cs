@@ -2,12 +2,11 @@
 using CashFlow.Comunication.Requests.Expenses;
 using CashFlow.Comunication.Requests.Users;
 using CashFlow.Comunication.Responses.Expenses;
-using CashFlow.Comunication.Responses.Users;
 using CashFlow.Domain.Entities;
 
 namespace CashFlow.Application.AutoMapper
 {
-    class AutoMapping : Profile
+    public class AutoMapping : Profile
     {
         public AutoMapping()
         {
