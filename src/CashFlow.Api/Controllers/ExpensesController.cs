@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CashFlow.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ExpensesController : ControllerBase
@@ -28,7 +29,6 @@ namespace CashFlow.Api.Controllers
             return Created(string.Empty, response);
         }
 
-        [Authorize]
         [HttpGet]
         [ProducesResponseType(typeof(ResponseExpensesJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
