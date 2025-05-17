@@ -6,6 +6,7 @@ using CashFlow.Application.UseCases.Expenses.Update;
 using CashFlow.Comunication.Requests.Expenses;
 using CashFlow.Comunication.Responses;
 using CashFlow.Comunication.Responses.Expenses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CashFlow.Api.Controllers
@@ -27,6 +28,7 @@ namespace CashFlow.Api.Controllers
             return Created(string.Empty, response);
         }
 
+        [Authorize]
         [HttpGet]
         [ProducesResponseType(typeof(ResponseExpensesJson), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
