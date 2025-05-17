@@ -70,7 +70,7 @@ namespace Validators.Tests.Users.Register
         }
 
         [Fact]
-        public void Error_Password_Invalid()
+        public void Error_Password_Empty()
         {
             var validator = new RegisterUserValidator();
             var request = RequestRegisterUserJsonBuilder.Builder();
