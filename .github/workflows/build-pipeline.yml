@@ -1,0 +1,36 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Build & Run Tests
+
+# gatilhos
+on:
+  push:
+    branches: 
+      - develop
+  pull_request:
+    branches: 
+      - develop
+
+jobs:
+# cada job é definido pelo nome, que deve ser único
+# e deve começar com uma letra ou _, e composto por alphanúmericos, - ou _
+  build:
+  # o tipo da máquina que o job será executado
+    runs-on: ubuntu-latest
+
+  # Conjunto de etapas que o pipeline irá executar
+    steps:
+    # actions checkout é possível referenciar
+    # - uma versão de uma release (@v4)
+    # - uma versão especifica (@v4.2.0)
+    # - uma branch (@develop)
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Build Solution
+      run: dotnet build
+    - name: Test
+      run: dotnet test --no-build --verbosity detailed

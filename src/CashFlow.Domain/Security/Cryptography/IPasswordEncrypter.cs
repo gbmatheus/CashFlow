@@ -3,5 +3,6 @@
     public interface IPasswordEncrypter
     {
         string Encrypter(string password);
+        bool Verify(string password, string hash);
     }
 }

@@ -34,7 +34,7 @@ namespace CashFlow.Application.UseCases.Users.Register
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<ResponseRegisteredUserJson> Execute(RequestRegisterUserJson request)
+        public async Task<ResponseUserJson> Execute(RequestRegisterUserJson request)
         {
             await Validate(request);
 
@@ -45,7 +45,7 @@ namespace CashFlow.Application.UseCases.Users.Register
             await _userWriteOnlyRepository.Add(user);
             await _unitOfWork.Commit();
 
-            return new ResponseRegisteredUserJson
+            return new ResponseUserJson
             {
                 Name= user.Name,
                 Token = ""
