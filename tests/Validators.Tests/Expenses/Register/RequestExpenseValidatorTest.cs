@@ -7,7 +7,7 @@ using FluentAssertions;
 
 namespace Validators.Tests.Expenses.Register
 {
-    public class RequestExpenseValidatorTests
+    public class RequestExpenseValidatorTest
     {
         [Fact]
         public void Sucess()
