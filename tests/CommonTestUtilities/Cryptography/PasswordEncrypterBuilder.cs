@@ -4,13 +4,27 @@ using Moq;
 
 namespace CommonTestUtilities.Cryptography
 {
-    public static class PasswordEncrypterBuilder
+    public class PasswordEncrypterBuilder
     {
-        public static IPasswordEncrypter Build()
+        Mock<IPasswordEncrypter> _passwordEncrypter;
+
+        public PasswordEncrypterBuilder()
         {
-            var mock = new Mock<IPasswordEncrypter>();
-            mock.Setup(passwordEncrypter => passwordEncrypter.Encrypter(It.IsAny<string>())).Returns("39U6mcmKKtpj");
-            return mock.Object;
+            _passwordEncrypter = new Mock<IPasswordEncrypter>();
+            _passwordEncrypter.Setup(
+               passwordEncrypter => passwordEncrypter.Encrypter(It.IsAny<string>())
+            ).Returns("39U6mcmKKtpj");
+        }
+
+        public PasswordEncrypterBuilder Verify(string password)
+        {
+            _passwordEncrypter.Setup(config => config.Verify(password, It.IsAny<string>())).Returns(true);
+            return this;
+        }
+
+        public IPasswordEncrypter Build()
+        {
+            return _passwordEncrypter.Object;
         }
     }
 }

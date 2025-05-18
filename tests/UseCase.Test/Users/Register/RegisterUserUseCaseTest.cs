@@ -59,7 +59,7 @@ namespace UseCase.Test.User.Register
         {
             IMapper mapper = MapperBuilder.Builder();
             IUnitOfWork unitOfWork = UnitOfWorkBuilder.Build();
-            IPasswordEncrypter passwordEncrypter = PasswordEncrypterBuilder.Build();
+            IPasswordEncrypter passwordEncrypter = new PasswordEncrypterBuilder().Build();
             IAccessTokenGenerator accessToken = AccessTokenGeneratorBuilder.Build();
 
             var userReadOnlyRepository = new UserReadRepositoryBuilder();
